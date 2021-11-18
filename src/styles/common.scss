@@ -2,6 +2,11 @@ body {
   margin: 0px;
 }
 
-.cursor-pointer {
-  cursor: pointer !important;
+.MuiChip-root {
+  &.selected {
+    color: #2196f3;
+    > .MuiChip-icon {
+      color: inherit;
+    }
+  }
 }

@@ -1,15 +1,21 @@
+import { Box, Container, Stack } from "@mui/material";
+import { grey } from "@mui/material/colors";
+import MainContent from "components/MainContent";
+import SubContent from "components/SubContent";
 import SubredditHeader from "components/SubredditHeader";
-import { redditHooks } from "hooks";
 import React from "react";
-import "./Subreddit.scss";
 
 const Subreddit: React.FC = () => {
-  const { threads } = redditHooks.useDotaThreads();
-  console.log(threads);
   return (
-    <>
+    <Box sx={{ bgcolor: grey[300], flexGrow: 1 }}>
       <SubredditHeader></SubredditHeader>
-    </>
+      <Container maxWidth="md" sx={{ my: 2.5 }}>
+        <Stack direction="row" justifyContent="space-between">
+          <MainContent />
+          <SubContent />
+        </Stack>
+      </Container>
+    </Box>
   );
 };
 

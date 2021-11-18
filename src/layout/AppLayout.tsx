@@ -5,6 +5,7 @@ import {
   CssBaseline,
   Fab,
   IconButton,
+  Stack,
   Toolbar,
   Typography,
   useScrollTrigger,
@@ -60,7 +61,7 @@ const ElevationScroll = ({ ...props }) => {
 
 const AppLayout: React.FC = ({ children, ...props }) => {
   return (
-    <>
+    <Stack direction="column" sx={{ minHeight: "100vh" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar color="inherit">
@@ -73,8 +74,7 @@ const AppLayout: React.FC = ({ children, ...props }) => {
             <Typography
               variant="h6"
               component="div"
-              className="cursor-pointer"
-              sx={{ display: { xs: "none", sm: "block" } }}
+              sx={{ display: { xs: "none", sm: "block", cursor: "pointer" } }}
             >
               Subreddit
             </Typography>
@@ -82,13 +82,13 @@ const AppLayout: React.FC = ({ children, ...props }) => {
         </AppBar>
       </ElevationScroll>
       <Toolbar id="back-to-top-anchor" />
-      {children}s
+      {children}
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUp />
         </Fab>
       </ScrollTop>
-    </>
+    </Stack>
   );
 };
 
