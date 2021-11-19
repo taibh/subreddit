@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 import AppLayout from "layout/AppLayout";
+import CommonError from "pages/CommonError";
 import NotFound from "pages/NotFound";
 import Subreddit from "pages/Subreddit";
 import ThreadPage from "pages/ThreadPage";
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Subreddit />} />
             <Route path="/thread/:id" element={<ThreadPage />} />
+            <Route path="/error" element={<CommonError />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

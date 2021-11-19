@@ -22,7 +22,7 @@ const convertThreadData = (data: any): Thread => {
 };
 
 const getDota2ThreadInfo = async (id: string): Promise<any> => {
-  const { data } = await redditService.get(`/r/DotA2/comments/${id}/.json`);
+  const { data } = await redditService.get(`/r/DotA2/comments/${id}.json`);
   const thread: Thread = convertThreadData(data[0]?.data?.children[0]?.data);
 
   return { thread };

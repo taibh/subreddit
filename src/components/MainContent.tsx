@@ -45,7 +45,7 @@ const MainContent: React.FC = () => {
     >
       <SubredditFilter onFilter={onFilter} />
       {loading && !isLoadMore && <LoadingCard />}
-      {!!allThreads && (
+      {!!allThreads?.length && (
         <>
           {allThreads.map((thread) => (
             <SubredditCard key={thread.id} thread={thread} />
